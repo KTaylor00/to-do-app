@@ -1,0 +1,12 @@
+main {
+  padding-top: 200px;
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+input {
+  background-color: whitesmoke;
+  border-radius: 10px;
+  padding: 10px;
+  border: none;
+}
