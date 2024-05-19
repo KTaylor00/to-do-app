@@ -60,4 +60,14 @@ export interface Params {
 export type AddTask = {
   task: string | null;
 };
+
+export type LoggedInUser = {
+  user: User;
+};
+
+export type User = {
+  username: string;
+  name: string;
+  surname: string;
+};
 //#endregion

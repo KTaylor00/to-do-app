@@ -36,6 +36,7 @@ export class TasksComponent {
   showAllTasks: boolean = true;
   showPending: boolean = true;
   showCompleted: boolean = true;
+  username: string | null = '';
 
   tasks: Task[] = [];
 
@@ -110,6 +111,7 @@ export class TasksComponent {
   }
 
   ngOnInit(): void {
+    this.username = localStorage.getItem('username');
     this.getTasks();
   }
 }
