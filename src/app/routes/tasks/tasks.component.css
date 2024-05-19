@@ -1,0 +1,71 @@
+main {
+  margin: 0 auto;
+  max-width: 600px;
+  padding-top: 100px;
+}
+
+input {
+  width: 50%;
+  border-radius: 10px;
+  padding: 12px;
+  border: 1px solid whitesmoke;
+}
+
+input:focus {
+  outline: none;
+  border: 2px solid whitesmoke;
+}
+
+.delete-btn {
+  background-color: transparent;
+  border: transparent;
+  margin: 0;
+  text-align: center;
+  cursor: pointer;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+mat-button-toggle-group {
+  margin: 10px;
+}
+
+mat-list-item {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.add-task {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.add-task > input {
+  border: none;
+  background-color: whitesmoke;
+}
+
+.add-task > input:focus {
+  outline: none;
+  border: none;
+}
+
+.task-list {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+}
+
+.logout-btn {
+  display: absolute;
+  top: 10px;
+  left: 10px;
+}

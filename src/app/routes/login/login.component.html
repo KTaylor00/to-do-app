@@ -1,5 +1,5 @@
 <main>
-  <form [formGroup]="LoginForm">
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
     <mat-card>
       <mat-card-header>
         <mat-card-title>Login</mat-card-title>
@@ -13,7 +13,7 @@
             type="text"
             formControlName="username"
           />
-          @if (LoginForm.controls.username.hasError("required")) {
+          @if (loginForm.controls.username.hasError("required")) {
           <mat-error>Username is <strong>required</strong></mat-error>
           }
         </mat-form-field>
@@ -25,14 +25,14 @@
             type="password"
             formControlName="password"
           />
-          @if (LoginForm.controls.password.hasError("required")) {
+          @if (loginForm.controls.password.hasError("required")) {
           <mat-error>Password is <strong>required</strong></mat-error>
           }
         </mat-form-field>
         <h5>Don't have an account? <a routerLink="/register">Register</a></h5>
       </mat-card-content>
       <mat-card-actions align="end" class="card-actions">
-        <a mat-raised-button color="primary" routerLink="/tasks">Login</a>
+        <button mat-raised-button color="primary" type="submit">Login</button>
       </mat-card-actions>
     </mat-card>
   </form>

@@ -1,0 +1,80 @@
+<button
+  class="logout-btn"
+  mat-raised-button
+  color="warn"
+  (click)="logoutUser()"
+>
+  Logout
+</button>
+
+<main>
+  <div class="add-task">
+    <input
+      (keydown.enter)="addTask(task)"
+      type="text"
+      [(ngModel)]="task"
+      placeholder="Enter a task and press enter to add it to the list"
+    />
+  </div>
+
+  <mat-card>
+    <div class="card-header">
+      <mat-card-header>
+        <mat-card-title>Your to do list</mat-card-title>
+      </mat-card-header>
+      <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+        <mat-button-toggle
+          value="Pending"
+          (click)="getTasks()"
+          [checked]="showAllTasks"
+          >All tasks</mat-button-toggle
+        >
+        <mat-button-toggle
+          value="Pending"
+          (click)="filterPendingTasks()"
+          [hidden]="!showPending"
+          >Pending</mat-button-toggle
+        >
+        <mat-button-toggle
+          value="completed"
+          (click)="filterCompletedTasks()"
+          [hidden]="!showCompleted"
+          >Completed</mat-button-toggle
+        >
+      </mat-button-toggle-group>
+    </div>
+
+    <mat-card-content class="card-content">
+      <mat-list>
+        @for (task of tasks; track task) {
+        <mat-list-item>
+          <div class="task-list">
+            <input
+              type="text"
+              value="{{ task.task }}"
+              [(ngModel)]="task.task"
+            />
+            <mat-checkbox
+              [(ngModel)]="task.is_Completed"
+              [checked]="task.is_Completed"
+            />
+            <button class="delete-btn" (click)="deleteTask(task.id)">
+              <mat-icon
+                aria-hidden="false"
+                aria-label="Example home icon"
+                fontIcon="delete"
+                color="warn"
+              />
+            </button>
+          </div>
+        </mat-list-item>
+        }
+      </mat-list>
+    </mat-card-content>
+    <mat-card-actions align="end">
+      <button mat-raised-button color="primary" (click)="updateTasks()">
+        Update Task(s)
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</main>

@@ -1,0 +1,58 @@
+<main>
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Register</mat-card-title>
+      </mat-card-header>
+      <mat-card-content class="card-content">
+        <!-- username -->
+        <mat-form-field>
+          <mat-label>Username</mat-label>
+          <input
+            matInput
+            id="username"
+            type="text"
+            formControlName="username"
+          />
+          @if (registerForm.controls.username.hasError("required")) {
+          <mat-error>Username is <strong>required</strong></mat-error>
+          }
+        </mat-form-field>
+        <!-- First Name -->
+        <mat-form-field>
+          <mat-label>Name</mat-label>
+          <input matInput id="name" type="text" formControlName="name" />
+          @if (registerForm.controls.username.hasError("required")) {
+          <mat-error>Name is <strong>required</strong></mat-error>
+          }
+        </mat-form-field>
+        <!-- Last Name -->
+        <mat-form-field>
+          <mat-label>Surname</mat-label>
+          <input matInput id="surname" type="text" formControlName="surname" />
+          @if (registerForm.controls.username.hasError("required")) {
+          <mat-error>Surname is <strong>required</strong></mat-error>
+          }
+        </mat-form-field>
+        <!-- Password -->
+        <mat-form-field>
+          <mat-label>Password</mat-label>
+          <input
+            matInput
+            id="password"
+            type="password"
+            formControlName="password"
+          />
+          @if (registerForm.controls.password.hasError("required")) {
+          <mat-error>Password is <strong>required</strong></mat-error>
+          }
+        </mat-form-field>
+      </mat-card-content>
+      <mat-card-actions align="end" class="card-actions">
+        <button mat-raised-button color="primary" type="submit">
+          Register
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </form>
+</main>
